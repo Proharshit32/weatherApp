@@ -25,11 +25,7 @@ A clean, professional weather dashboard built with **React** and the **Visual Cr
 
 ## 🖥️ Preview
 
-```
-Desktop  →  Sidebar | Main Content | 7-Day Panel
-Tablet   →  Top Nav | Main Content | 7-Day Panel (below)
-Mobile   →  Bottom Nav | Stacked Content
-```
+![Preview](src/assets/image.png)
 
 ---
 
@@ -153,11 +149,6 @@ To get an API key, sign up for free at [visualcrossing.com](https://www.visualcr
 
 ---
 
-## 🖥️ Preview
-
-![Preview](src/assets/image.png)
-
----
 ## 🙏 Acknowledgements
 
 - Weather data by [Visual Crossing](https://www.visualcrossing.com/)
