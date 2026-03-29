@@ -153,6 +153,11 @@ To get an API key, sign up for free at [visualcrossing.com](https://www.visualcr
 
 ---
 
+## 🖥️ Preview
+
+![Preview](screenshots/desktop.png)
+
+---
 ## 🙏 Acknowledgements
 
 - Weather data by [Visual Crossing](https://www.visualcrossing.com/)
