@@ -155,7 +155,7 @@ To get an API key, sign up for free at [visualcrossing.com](https://www.visualcr
 
 ## 🖥️ Preview
 
-![Preview](screenshots/desktop.png)
+![Preview](assets/image.png)
 
 ---
 ## 🙏 Acknowledgements
