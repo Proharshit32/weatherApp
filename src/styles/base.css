@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0b1120;
+  --surface: #111c2d;
+  --surface2: #172236;
+  --surface3: #0e1828;
+  --glass: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.07);
+  --accent: #4f9cf9;
+  --accent-dim: rgba(79,156,249,0.15);
+  --text: #e2ecff;
+  --text-muted: #5a7296;
+  --text-dim: #7d9abf;
+  --radius: 22px;
+  --radius-sm: 14px;
+  --radius-xs: 10px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Nunito', sans-serif;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse 60% 50% at 20% 10%, rgba(79,156,249,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 80%, rgba(100,80,200,0.05) 0%, transparent 60%);
+}
+
+.app {
+  display: flex;
+  min-height: 100vh;
+  padding: 16px;
+  gap: 14px;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  overflow-y: auto;
+  min-width: 0;
+}
+.main::-webkit-scrollbar { display: none; }
+
+/* ─── ANIMATIONS ─────────────────────────────────────── */
+.fade-in { animation: fade-in 0.45s ease both; }
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.slide-up { animation: slide-up 0.4s ease both; animation-delay: var(--delay, 0s); }
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes item-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ─── SKELETONS ──────────────────────────────────────── */
+.skeleton { pointer-events: none; }
+.skel-line, .skel-circle {
+  display: block;
+  background: linear-gradient(90deg, var(--surface2) 25%, var(--surface3) 50%, var(--surface2) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 6px;
+}
+.skel-line { height: 10px; width: 60%; }
+.skel-line.short { width: 38%; }
+.skel-line.long  { width: 78%; }
+.skel-circle { width: 28px; height: 28px; border-radius: 50%; }
+.skel-circle.sm  { width: 22px; height: 22px; }
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── TOAST ──────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  background: #1e2d45;
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #fca5a5;
+  border-radius: var(--radius-xs);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  z-index: 1000;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  animation: toast-in 0.3s ease;
+  max-width: 90vw;
+}
+.toast svg { flex-shrink: 0; color: #f87171; }
+.toast-close { background: none; border: none; color: #f87171; cursor: pointer; font-size: 12px; margin-left: 6px; opacity: 0.7; transition: opacity 0.2s; }
+.toast-close:hover { opacity: 1; }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(12px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* ─── SHARED CARD ────────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  border: 1px solid var(--glass-border);
+  flex-shrink: 0;
+}
+
+.card-label {
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.spinner {
+  width: 16px; height: 16px;
+  border: 2px solid rgba(79,156,249,0.25);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.wi { width: 100%; height: 100%; }
