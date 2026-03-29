@@ -26,6 +26,7 @@ A clean, professional weather dashboard built with **React** and the **Visual Cr
 ## 🖥️ Preview
 
 ![Preview](src/assets/image.png)
+![LiveDemo](https://weather-app-zeta-one-50.vercel.app/) 
 
 ---
 
